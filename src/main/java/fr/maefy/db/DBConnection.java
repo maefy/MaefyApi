@@ -1,6 +1,6 @@
 package fr.maefy.db;
 
-import fr.maefy.api.API;
+import fr.maefy.account.Account;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
