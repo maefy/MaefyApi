@@ -1,36 +1,44 @@
 package fr.maefy.db;
 
 import fr.maefy.api.API;
-import redis.clients.jedis.Jedis;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.logging.Logger;
 
 public class DBConnection {
     String address;
     int port;
-    Jedis jedis;
+    String databaseName;
+    String username;
+    String password;
+    Connection connection;
 
-    public DBConnection(String address, int port) {
+    public DBConnection(String address, int port , String databaseName ,String username ,String password) {
+
         this.address = address;
         this.port = port;
-        // Établir une connexion à Redis
-        jedis = new Jedis(address, port);
+        this.databaseName = databaseName;
+        this.username = username;
+        this.password = password;
 
-        // Tester la connexion en vérifiant la disponibilité du serveur Redis
-        String response = jedis.ping();
+        String jdbcURL = "jdbc:mariadb://"
+                + address
+                + ":"
+                + port
+                +"/"
+                +databaseName;
 
-        API.logger.info("Réponse du serveur Redis : " + response);
+        try {
+            connection = DriverManager.getConnection(jdbcURL,username,password);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public int getPort() {
-        return port;
-    }
-
-    public Jedis getJedis() {
-        return jedis;
+    public Connection getConnection() {
+        return connection;
     }
 }
