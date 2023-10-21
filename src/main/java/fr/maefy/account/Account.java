@@ -162,12 +162,12 @@ public class Account {
     }
 
     public static void addElo(Player player , int elo , DBConnection dbConnection ){
-        int newElo = getRenom(player, dbConnection) + elo;
+        int newElo = getElo(player, dbConnection) + elo;
         setElo(player, newElo, dbConnection);
     }
 
     public static void removeElo(Player player , int elo , DBConnection dbConnection ){
-        int newElo = getRenom(player, dbConnection) - elo;
+        int newElo = getElo(player, dbConnection) - elo;
         setElo(player, newElo, dbConnection);
     }
 

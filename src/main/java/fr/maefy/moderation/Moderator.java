@@ -15,7 +15,7 @@ public class Moderator {
         try {
             PreparedStatement preparedStatement = dbConnection.getConnection().prepareStatement("UPDATE Account SET sanctions = ? WHERE uuid = ?");
             preparedStatement.setInt(1, sanctions);
-            preparedStatement.setString(2, uuid.toString());
+            preparedStatement.setString(2, uuid);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
