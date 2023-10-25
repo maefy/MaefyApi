@@ -73,7 +73,7 @@ public class Reports {
 
     }
 
-    public static List<String> getPlayerReportsReason(Player player, DBConnection dbConnection) {
+    /*public static List<String> getPlayerReportsReason(Player player, DBConnection dbConnection) {
         String playerName = player.getName();
         String uuid = player.getUniqueId().toString();
         List<String> reasons = new ArrayList<>();
@@ -96,6 +96,6 @@ public class Reports {
 
         return reasons;
 
-    }
+    }*/
 
 }
