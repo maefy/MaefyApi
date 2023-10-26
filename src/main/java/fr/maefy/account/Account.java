@@ -1,7 +1,7 @@
 package fr.maefy.account;
 
 import fr.maefy.db.DBConnection;
-import org.bukkit.entity.Player;
+import fr.maefy.player.Player;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -166,7 +166,7 @@ public class Account {
         setElo(player, newElo, dbConnection);
     }
 
-    public static void removeElo(Player player , int elo , DBConnection dbConnection ){
+    public static void deleteElo(Player player , int elo , DBConnection dbConnection ){
         int newElo = getElo(player, dbConnection) - elo;
         setElo(player, newElo, dbConnection);
     }

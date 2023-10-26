@@ -1,7 +1,7 @@
 package fr.maefy.moderation;
 
 import fr.maefy.db.DBConnection;
-import org.bukkit.entity.Player;
+import fr.maefy.player.Player;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
