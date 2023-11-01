@@ -18,4 +18,8 @@ public class Player {
     public UUID getUniqueId() {
         return playerUUID;
     }
+
+    public static Player getPlayer(String playerName , UUID uuid){
+        return new Player(playerName,uuid);
+    }
 }
