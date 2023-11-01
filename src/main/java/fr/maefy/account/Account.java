@@ -1,7 +1,7 @@
 package fr.maefy.account;
 
 import fr.maefy.db.DBConnection;
-import fr.maefy.player.Player;
+import fr.maefy.players.Player;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

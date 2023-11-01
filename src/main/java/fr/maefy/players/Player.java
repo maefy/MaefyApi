@@ -1,4 +1,6 @@
-package fr.maefy.player;
+package fr.maefy.players;
+
+import fr.maefy.teams.Team;
 
 import java.util.UUID;
 

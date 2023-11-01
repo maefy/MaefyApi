@@ -1,7 +1,7 @@
 package fr.maefy.moderation;
 
 import fr.maefy.db.DBConnection;
-import fr.maefy.player.Player;
+import fr.maefy.players.Player;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -73,7 +73,7 @@ public class Reports {
 
     }
 
-    /*public static List<String> getPlayerReportsReason(Player player, DBConnection dbConnection) {
+    public static List<String> getPlayerReportsReason(Player player, DBConnection dbConnection) {
         String playerName = player.getName();
         String uuid = player.getUniqueId().toString();
         List<String> reasons = new ArrayList<>();
@@ -89,13 +89,12 @@ public class Reports {
                 reasons.add(resultSet.getString("reason"));
             }
 
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
         return reasons;
 
-    }*/
+    }
 
 }
